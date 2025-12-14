@@ -6,15 +6,15 @@ Description=Battery Monitor Script (with Logging)
 Type=simple
 
 # يجب عليك تعديل المسار هنا لمسار السكربت على جهازك
-ExecStart=/usr/bin/python3 /home/abdelilah/scripts/batterymonitoring.py
+ExecStart=/usr/bin/python3 /home/User/scripts/batterymonitoring.py
 
 # تمكين المتغيرات البيئية لكي تعمل notify-send في الجلسة الرسومية
 Environment=DISPLAY=:0
-Environment=XAUTHORITY=/home/abdelilah/.Xauthority
+Environment=XAUTHORITY=/home/User/.Xauthority
 # Environment=XAUTHORITY=/home/ali/.Xauthority
 
 # اجعل الخدمة تعمل تحت مستخدمك وليس root
-#User=abdelilah
+#User=User
 # User=ali
 
 # في حال وقوع خطأ، أعد التشغيل بعد ثانيتين

@@ -1,0 +1,29 @@
+[Unit]
+Description=Battery Monitor Script (with Logging)
+#~/.config/systemd/user/battery-monitor.service
+
+[Service]
+Type=simple
+
+# يجب عليك تعديل المسار هنا لمسار السكربت على جهازك
+ExecStart=/usr/bin/python3 /home/abdelilah/scripts/batterymonitoring.py
+
+# تمكين المتغيرات البيئية لكي تعمل notify-send في الجلسة الرسومية
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/abdelilah/.Xauthority
+# Environment=XAUTHORITY=/home/ali/.Xauthority
+
+# اجعل الخدمة تعمل تحت مستخدمك وليس root
+#User=abdelilah
+# User=ali
+
+# في حال وقوع خطأ، أعد التشغيل بعد ثانيتين
+Restart=always
+RestartSec=5
+
+#  ضمان أن الـ service يظهر log في journalctl
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target
